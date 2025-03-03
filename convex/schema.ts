@@ -5,7 +5,7 @@ export default defineSchema ( {
      users : defineTable({
         name : v?.string(),
         email : v?.string(),
-        profilePic : v?.string(),
+        picture : v?.string(),
         credits : v?.number()
     
     })
