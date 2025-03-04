@@ -7,6 +7,5 @@ export default defineSchema ( {
         email : v?.string(),
         picture : v?.string(),
         credits : v?.number()
-    
     })
 })

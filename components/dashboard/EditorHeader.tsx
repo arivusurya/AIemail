@@ -6,16 +6,16 @@ import { Code, Monitor, MonitorCheck, SmartphoneIcon } from "lucide-react";
 import { useScreen } from "@/context/ScreenContext";
 
 function EditorHeader() {
-  const {setScreen} = useScreen()
+  const {screen,setScreen} = useScreen()
   return (
     <div className="p-4 shadow-sm flex justify-between items-center">
       <Image src={"/logo.svg"} width={200} height={160} alt="logo" />
       <div className="flex gap-2" > 
-        <Button className="hover:text-purple-600" onClick={()=>setScreen("desktop")} variant={"ghost"}>
+        <Button className={`hover:text-purple-600 ${screen === "desktop" && "bg-purple-100 text-purple-600"  } `} onClick={()=>setScreen("desktop")} variant={"ghost"}>
           <Monitor/>
           Desktop
         </Button>
-        <Button className="hover:text-purple-600" variant={"ghost"} onClick={()=>setScreen("mobile")}>
+        <Button className={`hover:text-purple-600 ${screen === "mobile" && "bg-purple-100 text-purple-600"  } `} variant={"ghost"} onClick={()=>setScreen("mobile")}>
           <SmartphoneIcon/>
           Mobile
         </Button>
